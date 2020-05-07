@@ -1,3 +1,4 @@
+DATA_PATH = "./core/data"
 DECKS_PICKLE = "core/data/decks_pickle"
 JOKERS_PICKLE = "core/data/jokers_pickle"
 

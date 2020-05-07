@@ -5,7 +5,7 @@ from core.const import JOKERS_PICKLE, DECKS_PICKLE
 from ldc import main
 
 
-mkdir("./core/data")
+mkdir(DATA_PATH)
 
 deck = {
             "name"          : "Template, delete me",
