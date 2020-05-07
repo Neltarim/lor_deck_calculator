@@ -11,7 +11,8 @@ class Decks():
         self.temp = None
 
     def dump_jokers(self):
-        print("Enter your jokers :\n")
+        self.print_jokers()
+        print("Enter the new values :\n")
 
         for joker in self.jokers:
             res = input(joker + " :")
@@ -34,13 +35,25 @@ class Decks():
 
         return jokers
 
+    def print_jokers(self):
+        jokers = self.get_jokers()
+
+        print("Jokers in your hands :")
+
+        print(" ------------------------------------------------------------")
+        for joker in jokers:
+            print("| {} : {} | ".format(joker, jokers[joker]), end="")
+
+        print("\n ------------------------------------------------------------\n\n")
+
     def print_decks(self):
+        self.print_jokers()
         print("Your next decks to shine in ranked :")
         decks = self.get_decks()
 
         i = 1
         for deck in decks:
-            print("____________________________________________________________\n")
+            print("_____________________________________________________________\n")
             print("{}. {} :\n".format(i, deck['name']))
             i += 1
 
@@ -51,7 +64,7 @@ class Decks():
 
             print("Total without jokers:    {}".format(deck['total_without']))
             print("Total with jokers:       {}".format(deck['total_with']))
-            print("____________________________________________________________\n\n")
+            print("_____________________________________________________________\n\n")
 
     def get_decks(self):
         with open(DECKS_PICKLE, "rb") as file:
